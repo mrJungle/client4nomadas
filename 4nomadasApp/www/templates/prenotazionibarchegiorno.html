@@ -1,0 +1,29 @@
+<ion-view view-title="{{giorno| date:'EEE dd MMMM' | uppercase}}">
+  <ion-nav-buttons side="right">
+      <button class="button icon ion-gear-a" ></button>  
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider">
+        <h3 class="text-center"> Barche Disponibili</h3>
+      </div>
+      <ul class="list card"  ng-repeat="b in barchedisponibili">
+        <li id="barche" class="item item-icon-right" >
+          {{b.barca_nome}} - {{b.barca_cavalli}} cv 
+            <i class="icon {{valutastato(b.barca_stato)}}"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="list">
+        <div class="item item-divider">
+          <h3 class="text-center"> Prenotazioni Registrate</h3>
+        </div>
+        <a class="item item-icon-left item-icon-right" collection-repeat="prenotazione in prenotazionibarche" ui-sref="app.prenotazionibarche.detail({prenotazioneId:prenotazione.id})" >
+          <i class="icon {{valutastatopagamento(prenotazione.saldo, prenotazione.caparra)}}" >
+          </i>
+       {{prenotazione.barca_nome}} - {{prenotazione.barca_cavalli}} cv | {{prenotazione.cliente_nome}} {{prenotazione.cliente_cognome}} {{prenotazione.barca_prenotata}}
+        <i class="icon {{valutastato(prenotazione.barca_stato)}}"></i>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>

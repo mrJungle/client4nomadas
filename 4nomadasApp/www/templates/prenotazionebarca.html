@@ -1,0 +1,67 @@
+<ion-view view-title='Prenotaizone'>
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-gear-a" ></button>  
+    </ion-nav-buttons>
+  <ion-content>
+
+  <div class="card list">
+
+  <div class="item item-divider">
+    Cliente
+  </div>
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-person"></i>
+      {{prenotazionebarca.cliente_nome}} {{prenotazionebarca.cliente_cognome}} 
+    </a>
+
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-email"></i>
+      {{prenotazionebarca.cliente_mail}}
+    </a>
+
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-ios-telephone"></i>
+      {{prenotazionebarca.cliente_telefono}}
+    </a>    
+  <div class="item item-divider item-icon-right" >
+    Barca
+    <i ng-if="valutastato(prenotazionebarca.barca_stato)" class="icon ion-alert-circled assertive"></i>
+  </div>
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-android-boat"></i>
+      {{prenotazionebarca.barca_nome}}
+    </a>
+
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-speedometer"></i>
+      {{prenotazionebarca.barca_cavalli}} cv
+    </a>
+
+  <div class="item item-divider">
+    Stato Prenotazione
+  </div>
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-cash"></i>
+      Caparra
+      <span class="badge {{valutastatocaparra(prenotazionebarca.caparra)}}">{{prenotazionebarca.caparra}}</span>
+    </a>
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-cash"></i>
+      Saldo
+      <span class="badge {{valutastatosaldo(prenotazionebarca.saldo)}}">{{prenotazionebarca.saldo}}</span>
+    </a>
+
+  <div class="item item-divider">
+    Operatore
+  </div>
+    <a class="item item-icon-left" href="#">
+      <i class="icon ion-person-stalker"></i>
+      {{prenotazionebarca.operatore}}
+    </a>  
+  </div>
+
+  </ion-content>
+  <div class="bar bar-footer" href="#" style="background:rgba(0,0,0,0);">
+    <button class="button button-assertive pull-right" ng-click=openAddBarca()><strong><i class="icon ion-edit"></i>Modifica</strong></button>
+  </div>  
+</ion-view>

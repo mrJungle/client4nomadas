@@ -1,0 +1,21 @@
+<ion-view view-title="Prenotazioni Barche">
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-gear-a" ></button>  
+    </ion-nav-buttons>
+  <ion-content>
+
+    <ul class="list">
+        <a collection-repeat="prenotazionebarcagiorno in prenotazionibarchegiorni" class="item item-{{prenotazionebarcagiorno.colore}}  item-icon-right" ui-sref="app.prenotazionibarche.daylist({giornoId:prenotazionebarcagiorno.data})">
+            {{prenotazionebarcagiorno.data | date:'EEE dd MMMM' | uppercase}} 
+            {{prenotazionebarcagiorno.numeroprenotazioni}}
+    <i class="icon ion-chevron-right"></i>
+        </a>
+    </ul>
+
+    <ion-infinite-scroll
+      on-infinite="updatePrenotazioniBarcheGiorni()"
+      distance="80%">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

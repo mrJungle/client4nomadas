@@ -1,0 +1,50 @@
+<ion-modal-view style="margin:0px;height:100%;width:100%;top:0;left:0;">
+  <ion-header-bar>
+    <h1 class="title">Add Barca</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeAddBarca()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="EditBarca()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Nome</span>
+          <input type="text" ng-model="PatchBarca.nome">
+        </label>        
+        <label class="item item-input">
+          <span class="input-label">Ordinamento</span>
+          <input type="numeric" ng-model="PatchBarca.id_ord">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Potenza</span>
+          <input type="text" ng-model="PatchBarca.cavalli">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Descrizione</span>
+          <input type="text" ng-model="PatchBarca.descrizione">
+        </label>                      
+        <label class="item item-input">
+          <span class="input-label">Prezzo media stagione</span>
+          <input type="numeric" ng-model="PatchBarca.prezzo_bassa_stagione">
+        </label>                
+        <label class="item item-input">
+          <span class="input-label">Prezzo alta stagione</span>
+          <input type="numeric" ng-model="PatchBarca.prezzo_alta_stagione">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Stato imbarcazione
+          </div>
+          <select  ng-model="PatchBarca.stato">
+            <option>In riparazione</option>
+            <option selected>Funzionante</option>
+          </select>
+        </label>
+        <label class="item" style?"padding-top:25px;">
+          <button class="button button-block button-positive" type="submit">Salva Modifiche</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

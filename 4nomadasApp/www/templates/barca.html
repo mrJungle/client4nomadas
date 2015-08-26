@@ -1,0 +1,36 @@
+<ion-view>
+  <ion-content>
+
+  <div class="card">
+    <div class="item item-energized">
+      <h2 class="text-center"><strong>{{barca.nome}}</strong></h2>
+    </div>
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-speedometer"></i>
+      <p><h2> Potenza: {{barca.cavalli}} CV</h2></p>
+    </a>
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-arrow-graph-up-right"></i>
+      <p><h2> Ordinamento value: {{barca.id_ord}} </h2></p>
+    </a>    
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-cash"></i>
+      <p> Prezzo alta stagione: {{barca.prezzo_alta_stagione}} </p>
+      <p> Prezzo bassa stagione: {{barca.prezzo_bassa_stagione}} </p>
+    </a>
+
+    <a href="#" class="item item-icon-left">
+      <i class="icon ion-arrow-graph-up-right"></i>
+      <p><h2> Stato: {{barca.stato}} </h2></p>
+    </a>    
+
+  </div>
+      
+  </ion-content>
+  <div class="bar bar-footer" href="#" style="background:rgba(0,0,0,0);">
+    <button class="button button-assertive pull-right" ng-click=openAddBarca()><strong><i class="icon ion-edit"></i>Modifica</strong></button>
+  </div>  
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view view-title="Barche">
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-gear-a" ></button>  
+    </ion-nav-buttons>
+  <ion-content>
+
+    <ul class="list ">
+        <li class="item item-avatar item-icon-right" collection-repeat="barca in barche" ui-sref="app.barche.detail({barcaId:barca.id})">
+        <img src="img/15cv.jpg">
+        <h2>Nome: <strong>{{barca.nome}}</strong></h2>
+        <p>Potenza: <strong>{{barca.cavalli}} cv
+           <i ng-if=valutastato(barca.stato)  class="icon ion-alert-circled assertive"></i></strong>  </p>
+        </li>
+    </ul>
+
+    <ion-infinite-scroll
+      on-infinite="updateBarche()"
+      distance="30%">
+    </ion-infinite-scroll>
+
+
+  </ion-content>
+</ion-view>
+

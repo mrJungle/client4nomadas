@@ -1,0 +1,19 @@
+<ion-view view-title="Prenotazioni Barche">
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-gear-a" ></button>  
+    </ion-nav-buttons>
+  <ion-content>
+
+    <ul class="list">
+        <li class="item" collection-repeat="prenotazionebarca in prenotazionibarche" >
+            {{prenotazionebarca.id}} -- {{prenotazionebarca.data}} 
+        </li>
+    </ul>
+
+    <ion-infinite-scroll
+      on-infinite="updatePrenotazioniBarche()"
+      distance="80%">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>
